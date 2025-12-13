@@ -1,7 +1,7 @@
 import socket 
 import os
 
-HOST = '192.168.204.129'
+HOST = '192.168.204.139'                                # listener-host
 
 def main():
     if os.name == 'nt':
@@ -10,7 +10,7 @@ def main():
         socket_protocol = socket.IPPROTO_ICMP
     
     sniffer = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket_protocol)
-    sniffer.bind(HOST, 0)
+    sniffer.bind((HOST, 0))
     sniffer.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
 
     if os.name == 'nt':
