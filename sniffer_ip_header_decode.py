@@ -35,21 +35,21 @@ class IP:
 
 def sniff(host):
     if os.name == 'nt':
-        socket_protocol = socket.IPPROTO_IP
+        socket_protocol = socket.IPPROTO_IP                                                     # for Windows for sniffing all IP traffic.
     else:
-        socket_protocol = socket.IPPROTO_ICMP
+        socket_protocol = socket.IPPROTO_ICMP                                                   # For Linux/Mac.
 
-    sniffer = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket_protocol)
+    sniffer = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket_protocol)                   # Creates the raw socket using IPv4 and Raw access. 
     sniffer.bind((host, 0))
-    sniffer.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
+    sniffer.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)                                 # Includes IP headers in the data.
 
     if os.name == 'nt':
-        sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_ON)
+        sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_ON)                                      # Turns on Promiscuous mode for Windows to see all the traffic.
     
     try:
         while True:
             # read the packet
-            raw_buffer = sniffer.recvfrom(65535)[0]
+            raw_buffer = sniffer.recvfrom(65535)[0]                                             # Raw bytes only.
             # creating IP-header from the first 20 bytes
             ip_header = IP(raw_buffer[0:20])
             # output detected protocol and addresses
@@ -58,7 +58,7 @@ def sniff(host):
                                              ip_header.dst_address))
     
     except KeyboardInterrupt:
-        # if Windows, turn off the premisc.mode
+        # if Windows, turn off the Promiscuous mode
         if os.name == 'nt':
             sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_OFF)
         sys.exit()
