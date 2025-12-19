@@ -27,11 +27,15 @@ Protocol: UDP 142.250.178.78 -> 192.168.1.94
 Protocol: UDP 192.168.1.94 -> 142.250.178.78
 ```
 ## 2. On Linux: 
-### 2.1 Terminal 1:
+### 2.1 Download the script:
+```bash
+wget -O sniffer_ip_header_decode.py https://raw.githubusercontent.com/Zauzanov/seahorse-analyzer/refs/heads/ip-header-decode-version/sniffer_ip_header_decode.py
+```
+### 2.2 Terminal 1:
 ```bash
 ping goolge.com
 ```
-### 2.2 Terminal 2:
+### 2.3 Terminal 2:
 ```bash
 python sniffer_ip_header_decode.py 192.168.204.139                   # your Kali machine's IP-address
 
