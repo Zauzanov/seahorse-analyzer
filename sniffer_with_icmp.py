@@ -86,7 +86,7 @@ class Scanner:
                     icmp_header = ICMP(buff)
                     # looking for 3 for type and code
                     if icmp_header.code == 3 and icmp_header.type ==3:
-                        if ip_header.src_address in ipaddress.ip_network(SUBNET):
+                        if ipaddress.ip_address(ip_header.src_address) in ipaddress.IPv4Network(SUBNET):
                             # check if the buffer contains our magic string
                             if raw_buffer[len(raw_buffer) - len(MESSAGE):] == bytes(MESSAGE, 'utf8'):
                                 tgt = str(ip_header.src_address)
@@ -113,6 +113,7 @@ if __name__ == '__main__':
     else:
         host = '192.168.1.94'
     s = Scanner(host)
+    time.sleep(5)
     t = threading.Thread(target=udp_sender)
     t.start()
     s.sniff()
