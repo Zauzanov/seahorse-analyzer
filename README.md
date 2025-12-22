@@ -10,9 +10,7 @@ Open Command Prompt. Type `ipconfig` and press Enter. Look for IPv4 Address.
 sudo python sniffer_with_icmp.py 192.168.1.94
 ```
 ## 2. On Linux: 
-### 2.1 
-
-### 2.2 Terminal 1:
+### 2.1 Terminal 1:
 ```bash
 sudo python sniffer_with_icmp.py 192.168.204.139                 # Your Kali's IP-address
 Host Up: 192.168.204.129
