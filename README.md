@@ -1,5 +1,5 @@
 # seahorse-analyzer
-A prototype of a network traffic analyzer written in Python: 
+A prototype of a network traffic analyzer written in Python, which is able to intercept one packet only: 
 
 # 1. On Kali, Terminal 1: 
 ```bash
