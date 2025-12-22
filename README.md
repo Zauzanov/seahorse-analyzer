@@ -1,5 +1,5 @@
 # seahorse-analyzer
-a network traffic analyzer written in Python
+A simple network sniffer that captures and analyzes IP packets on a specified host. It shows you real-time IP packets passing through your network interface, including which protocols (ICMP, TCP, UDP) are used and where they are going.
 
 ## 1. On Windows: 
 ### 1.1 Identify your Local IP Address:
