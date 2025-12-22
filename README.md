@@ -1,5 +1,5 @@
 # seahorse-analyzer
-a network traffic analyzer written in Python
+This script is a multithreaded network scanner. It works by sending UDP packets containing a magic string to every host on a subnet. If a host is active but the port is closed, it sends back an ICMP "Destination Unreachable" packet. It sniffs those responses to identify live hosts.
 
 ## 1. On Windows: 
 ### 1.1 Identify your Local IP Address:
