@@ -7,14 +7,14 @@ Open Command Prompt. Type `ipconfig` and press Enter. Look for IPv4 Address.
 ### 1.2  Run `cmd` or `Powershell` as administator, using Right-click before opening it.
 ### 1.3  Navigate to the folder where your script is saved using the cd command. And execute the analyzer:
 ```bash
-
+sudo python sniffer_with_icmp.py 192.168.1.94
 ```
 ## 2. On Linux: 
 ### 2.1 
 
 ### 2.2 Terminal 1:
 ```bash
-sudo python seahorse.py 192.168.204.139                 # Your Kali's IP-address
+sudo python sniffer_with_icmp.py 192.168.204.139                 # Your Kali's IP-address
 Host Up: 192.168.204.129
 Host Up: 192.168.204.144
 ^C
