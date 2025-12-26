@@ -9,8 +9,9 @@ Open Command Prompt. Type `ipconfig` and press Enter. Look for IPv4 Address.
 ```bash
 sudo python seahorse.py 192.168.1.94
 ```
-## 2. On Linux: 
-### 2.1 In the Terminal:
+## 2. On Linux:
+### 2.1 Run several virtual machines in advance to see some results; 
+### 2.2 In Kali Terminal:
 ```bash
 sudo python seahorse.py 192.168.204.139                 # Your Kali's IP-address
 Host Up: 192.168.204.129
